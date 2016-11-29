@@ -22,7 +22,7 @@ public class GameApplication extends Application<GameConfiguration> {
         new GameApplication().run(args);
     }
 
-    private final HibernateBundle<GameConfiguration> hibernate = new ScanningHibernateBundle<GameConfiguration>("com.javaee2.dolplads/core") {
+    private final HibernateBundle<GameConfiguration> hibernate = new ScanningHibernateBundle<GameConfiguration>("dolplads/core") {
         @Override
         public DataSourceFactory getDataSourceFactory(GameConfiguration configuration) {
             return configuration.getDataSourceFactory();

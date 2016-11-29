@@ -6,11 +6,7 @@
     <artifactId>SampleApp</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <modules>
-        <module>webModule</module>
-        <module>backend</module>
-        <module>gameApi</module>
-    </modules>
+
     <name>SampleApp</name>
 
     <properties>
@@ -178,14 +174,16 @@ do not have to copy&paste each time the <version> and <scope> tags
 
 <profiles>
     <profile>
-        <id>testings</id>
+        <id>quiz</id>
         <modules>
-            <module>webModule</module>
+            <module>quizApi</module>
             <module>backend</module>
+            <module>gameApi</module>
         </modules>
         <build>
             <!-- will override default url -->
             <finalName>quiz</finalName>
+
 
             <pluginManagement>
                 <plugins>
@@ -313,6 +311,10 @@ do not have to copy&paste each time the <version> and <scope> tags
      <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
      <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
      <id>openshift</id>
+        <modules>
+            <module>quizApi</module>
+            <module>backend</module>
+        </modules>
      <build>
         <finalName>SampleApp</finalName>
         <plugins>
