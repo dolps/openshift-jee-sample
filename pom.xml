@@ -4,8 +4,11 @@
 
     <groupId>SampleApp</groupId>
     <artifactId>SampleApp</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>webModule</module>
+    </modules>
     <name>SampleApp</name>
 
     <properties>
@@ -41,6 +44,7 @@
 
 <profiles>
     <profile>
+        <id>testings</id>
         <build>
             <!-- will override default url -->
             <finalName>quiz</finalName>
