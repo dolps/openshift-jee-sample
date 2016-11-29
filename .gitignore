@@ -21,7 +21,7 @@ downloaded_Wildfly
 .idea/gradle.xml
 .idea/libraries
 .idea/*
-
+# oc login --token=3mZmzFEsTMax_1PvTSkUc8U285N2aCq1nc2xzgB0FJI --server=https://api.preview.openshift.com
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
