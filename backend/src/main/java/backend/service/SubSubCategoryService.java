@@ -1,9 +1,8 @@
-package com.woact.dolplads.quiz.backend.service;
+package backend.service;
 
-import com.woact.dolplads.quiz.backend.entity.SubCategory;
-import com.woact.dolplads.quiz.backend.entity.SubSubCategory;
-import com.woact.dolplads.quiz.backend.repository.SubCategoryRepository;
-import com.woact.dolplads.quiz.backend.repository.SubSubCategoryRepository;
+
+import backend.entity.SubSubCategory;
+import backend.repository.SubSubCategoryRepository;
 import lombok.NoArgsConstructor;
 
 import javax.ejb.Stateless;

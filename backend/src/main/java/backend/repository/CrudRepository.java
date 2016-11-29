@@ -1,6 +1,6 @@
-package com.woact.dolplads.quiz.backend.repository;
+package backend.repository;
 
-import com.woact.dolplads.quiz.backend.contract.CRUD;
+import backend.contract.CRUD;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

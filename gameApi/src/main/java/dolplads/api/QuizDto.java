@@ -1,4 +1,4 @@
-package com.javaee2.dolplads.api;
+package dolplads.api;
 
 /**
  * Created by dolplads on 27/11/2016.

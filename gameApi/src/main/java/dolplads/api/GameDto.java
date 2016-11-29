@@ -1,4 +1,4 @@
-package com.javaee2.dolplads.api;
+package dolplads.api;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

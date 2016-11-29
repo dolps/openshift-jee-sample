@@ -1,10 +1,10 @@
-package com.woact.dolplads.quiz.backend.entity;
+package backend.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 
 /**
  * Created by dolplads on 26/10/2016.

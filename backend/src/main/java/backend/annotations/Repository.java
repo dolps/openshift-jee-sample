@@ -1,4 +1,4 @@
-package com.woact.dolplads.quiz.backend.annotations;
+package backend.annotations;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Stereotype;

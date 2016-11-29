@@ -1,4 +1,4 @@
-package com.javaee2.dolplads.health;
+package dolplads.health;
 
 import com.codahale.metrics.health.HealthCheck;
 

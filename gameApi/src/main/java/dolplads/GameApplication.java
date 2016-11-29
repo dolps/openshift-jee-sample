@@ -1,9 +1,7 @@
-package com.javaee2.dolplads;
+package dolplads;
 
-import com.javaee2.dolplads.client.QuizServiceResource;
-import com.javaee2.dolplads.db.GameDAO;
-import com.javaee2.dolplads.health.TemplateHealthCheck;
-import com.javaee2.dolplads.resources.GameResource;
+import dolplads.client.QuizServiceResource;
+import dolplads.db.GameDAO;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.client.JerseyClientBuilder;
@@ -53,10 +51,6 @@ public class GameApplication extends Application<GameConfiguration> {
     public void run(final GameConfiguration configuration,
                     final Environment environment) throws Exception {
 
-        final GameResource gameResource = new GameResource();
-        final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
-        environment.healthChecks().register("template", healthCheck);
-        environment.jersey().register(gameResource);
 
         final Client client = new JerseyClientBuilder(environment)
                 .using(configuration.getJerseyClientConfiguration())

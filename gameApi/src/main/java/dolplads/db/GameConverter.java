@@ -1,8 +1,7 @@
-package com.javaee2.dolplads.db;
+package dolplads.db;
 
-import com.javaee2.dolplads.api.GameDto;
-import com.javaee2.dolplads.core.Game;
-import com.woact.dolplads.quiz.backend.entity.Quiz;
+import dolplads.api.GameDto;
+import dolplads.core.Game;
 
 import java.util.List;
 import java.util.Objects;

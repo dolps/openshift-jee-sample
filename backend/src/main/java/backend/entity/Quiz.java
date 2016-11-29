@@ -1,10 +1,9 @@
-package com.woact.dolplads.quiz.backend.entity;
+package backend.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.inject.Named;
 import javax.persistence.*;
 
 /**

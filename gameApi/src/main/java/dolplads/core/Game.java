@@ -1,4 +1,4 @@
-package com.javaee2.dolplads.core;
+package dolplads.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.woact.dolplads.quiz.backend.entity.Quiz;

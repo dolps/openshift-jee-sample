@@ -1,4 +1,4 @@
-package com.woact.dolplads.quiz.backend.entity;
+package backend.entity;
 
 import lombok.*;
 

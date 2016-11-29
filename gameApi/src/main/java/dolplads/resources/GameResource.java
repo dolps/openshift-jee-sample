@@ -1,6 +1,7 @@
-package com.javaee2.dolplads.resources;
+package dolplads.resources;
 
-import com.javaee2.dolplads.core.Game;
+
+import dolplads.core.Game;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

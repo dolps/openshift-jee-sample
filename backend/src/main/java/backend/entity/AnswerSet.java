@@ -1,10 +1,11 @@
-package com.woact.dolplads.quiz.backend.entity;
+package backend.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

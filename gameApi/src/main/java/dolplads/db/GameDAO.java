@@ -1,6 +1,6 @@
-package com.javaee2.dolplads.db;
+package dolplads.db;
 
-import com.javaee2.dolplads.core.Game;
+import dolplads.core.Game;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 

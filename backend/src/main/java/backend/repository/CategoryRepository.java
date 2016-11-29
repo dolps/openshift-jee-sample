@@ -1,9 +1,9 @@
-package com.woact.dolplads.quiz.backend.repository;
+package backend.repository;
 
-import com.woact.dolplads.quiz.backend.annotations.Repository;
-import com.woact.dolplads.quiz.backend.entity.Category;
-import com.woact.dolplads.quiz.backend.entity.SubCategory;
-import com.woact.dolplads.quiz.backend.entity.SubSubCategory;
+import backend.annotations.Repository;
+import backend.entity.Category;
+import backend.entity.SubCategory;
+import backend.entity.SubSubCategory;
 
 import java.util.ArrayList;
 import java.util.HashSet;

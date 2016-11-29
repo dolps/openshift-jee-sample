@@ -1,4 +1,4 @@
-package com.javaee2.dolplads;
+package dolplads;
 
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;

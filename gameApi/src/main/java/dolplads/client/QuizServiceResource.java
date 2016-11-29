@@ -1,12 +1,12 @@
-package com.javaee2.dolplads.client;
+package dolplads.client;
 
 import com.codahale.metrics.annotation.Timed;
-import com.javaee2.dolplads.api.GameDto;
-import com.javaee2.dolplads.core.Game;
-import com.javaee2.dolplads.db.GameConverter;
-import com.javaee2.dolplads.db.GameDAO;
 import com.woact.dolplads.quiz.backend.entity.Question;
 import com.woact.dolplads.quiz.backend.entity.Quiz;
+import dolplads.api.GameDto;
+import dolplads.core.Game;
+import dolplads.db.GameConverter;
+import dolplads.db.GameDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

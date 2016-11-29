@@ -1,4 +1,4 @@
-package com.javaee2.dolplads.api;
+package dolplads.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;

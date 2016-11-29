@@ -1,6 +1,6 @@
-package com.woact.dolplads.quiz.backend.service;
+package backend.service;
 
-import com.woact.dolplads.quiz.backend.contract.CRUD;
+import backend.contract.CRUD;
 import lombok.NoArgsConstructor;
 
 import java.util.List;

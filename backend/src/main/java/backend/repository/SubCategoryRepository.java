@@ -1,7 +1,7 @@
-package com.woact.dolplads.quiz.backend.repository;
+package backend.repository;
 
-import com.woact.dolplads.quiz.backend.entity.SubCategory;
-import com.woact.dolplads.quiz.backend.entity.SubSubCategory;
+import backend.entity.SubCategory;
+import backend.entity.SubSubCategory;
 
 import java.util.List;
 

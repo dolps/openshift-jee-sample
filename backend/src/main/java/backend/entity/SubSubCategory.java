@@ -1,10 +1,13 @@
-package com.woact.dolplads.quiz.backend.entity;
+package backend.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * Created by dolplads on 15/11/2016.

@@ -1,9 +1,6 @@
-package com.woact.dolplads.quiz.backend.repository;
+package backend.repository;
 
-import com.woact.dolplads.quiz.backend.entity.Quiz;
-import com.woact.dolplads.quiz.backend.entity.SubCategory;
-
-import javax.inject.Inject;
+import backend.entity.Quiz;
 
 /**
  * Created by dolplads on 21/11/2016.
