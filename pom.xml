@@ -7,11 +7,27 @@
     <packaging>war</packaging>
     <version>1.0</version>
     <name>SampleApp</name>
-  
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
-    	<maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <hibernate.version>5.2.2.Final</hibernate.version>
+        <wildfly.version>10.1.0.Final</wildfly.version>
+        <jbossTarget>${basedir}/target/downloaded_Wildfly</jbossTarget>
+        <jbossHome>${jbossTarget}/wildfly-${wildfly.version}</jbossHome>
+        <version.jacoco>0.7.7.201606060606</version.jacoco>
+        <fs>${file.separator}</fs>
+
+        <!-- for the api -->
+        <swagger-version>1.5.10</swagger-version>
+        <jackson-version>2.7.4</jackson-version>
     </properties>
     
     <dependencies>
@@ -24,6 +40,131 @@
     </dependencies>
 
 <profiles>
+    <profile>
+        <build>
+            <!-- will override default url -->
+            <finalName>quiz</finalName>
+
+            <pluginManagement>
+                <plugins>
+                    <!-- this is needed to run integration tests -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.19.1</version>
+                        <executions>
+                            <execution>
+                                <id>run-tests</id>
+                                <phase>integration-test</phase>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>process-test-classes</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.wildfly</groupId>
+                                            <artifactId>wildfly-dist</artifactId>
+                                            <version>${wildfly.version}</version>
+                                            <type>zip</type>
+                                            <overWrite>false</overWrite>
+                                            <outputDirectory>${jbossTarget}</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>1.1.0.Alpha11</version>
+                        <configuration>
+                            <skip>true</skip>
+                            <jbossHome>${jbossHome}</jbossHome>
+                            <add-user>
+                                <users>
+                                    <user>
+                                        <username>admin</username>
+                                        <password>admin</password>
+                                    </user>
+                                </users>
+                            </add-user>
+                            <java-opts>
+                            </java-opts>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>init</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>shutdown</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>undeploy</goal>
+                                    <goal>shutdown</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.7.201606060606</version>
+                        <executions>
+                            <execution>
+                                <id>default-prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>default-report</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>default-prepare-agent-integration</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>prepare-agent-integration</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>default-report-integration</id>
+                                <goals>
+                                    <goal>report-integration</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </pluginManagement>
+        </build>
+    </profile>
     <profile>
      <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
      <!-- Use this profile for any OpenShift specific customization your app will need. -->
